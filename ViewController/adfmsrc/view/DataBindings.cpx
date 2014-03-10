@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/template/templateDef.jspx" usageId="view_templateDefPageDef"/>
+    <page path="/pages/pageTest.jspx" usageId="view_pageTestPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_templateDefPageDef" path="template.templateDefPageDef"/>
+    <page id="view_pageTestPageDef" path="pages.pageTestPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="Model" path="model.Model"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="pageTestPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.templateDefPageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Model" id="ModelIterator"/>
+    <accessorIterator MasterBinding="ModelIterator" Binds="listModels" RangeSize="25" DataControl="Model"
+                      BeanClass="view.Model" id="listModelsIterator"/>
+    <searchRegion Binds="listModelsIterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="listModelsQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="listModelsIterator" id="listModels">
+      <nodeDefinition DefName="view.Model" Name="listModels0">
+        <AttrNames>
+          <Item Value="test1"/>
+          <Item Value="test2"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

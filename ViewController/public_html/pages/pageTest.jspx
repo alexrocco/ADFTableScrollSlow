@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="pageTest.jspx" id="d1" binding="#{backingBeanScope.backing_pages_pageTest.d1}">
+            <af:messages id="m1" binding="#{backingBeanScope.backing_pages_pageTest.m1}"/>
+            <af:form id="f1" binding="#{backingBeanScope.backing_pages_pageTest.f1}">
+                <af:pageTemplate viewId="/template/templateDef.jspx" value="#{bindings.ptb1}" id="pt1">
+                    <f:facet name="center">
+                        <af:table value="#{bindings.listModels.collectionModel}" var="row"
+                                  rows="#{bindings.listModels.rangeSize}"
+                                  emptyText="#{bindings.listModels.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" fetchSize="#{bindings.listModels.rangeSize}"
+                                  filterModel="#{bindings.listModelsQuery.queryDescriptor}"
+                                  queryListener="#{bindings.listModelsQuery.processQuery}" filterVisible="true"
+                                  varStatus="vs" id="t1" binding="#{backingBeanScope.backing_pages_pageTest.t1}"
+                                  inlineStyle="height: 150px; width: 250px;">
+                            <af:column sortProperty="#{bindings.listModels.hints.test1.name}" filterable="true"
+                                       sortable="true" headerText="Test 01" id="c1">
+                                <af:outputText value="#{row.test1}"
+                                               shortDesc="#{bindings.listModels.hints.test1.tooltip}" id="ot1"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.listModels.hints.test2.name}" filterable="true"
+                                       sortable="true" headerText="Test 02" id="c2">
+                                <af:outputText value="#{row.test2}"
+                                               shortDesc="#{bindings.listModels.hints.test2.tooltip}" id="ot2"/>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="end"/>
+                    <f:facet name="start"/>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pages_pageTest-->
+</jsp:root>
